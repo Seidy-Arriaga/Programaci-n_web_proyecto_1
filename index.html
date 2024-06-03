@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIENDA CREATIVA</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Tienda Creativa _ Seidy Arriaga</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#products">Productos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#cart"><i class="fas fa-shopping-cart"></i> Carrito (<span id="cartCount">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <h2>Bienvenidos a la Tienda Creativa</h2>
+            <p>Descubre nuestros productos.</p>
+            <a href="#products" class="btn">Ver Productos</a>
+        </section>
+        <section id="products">
+            <h2>Nuestros Productos</h2>
+            <div class="product">
+                <img src="product1.jpg" alt="Producto 1">
+                <h3>Mascarilla Capilar Nutritiva y Reparadora</h3>
+                <p>Tarro de 250 ml</p>
+                <p class="price">$10</p>
+                <button onclick="addToCart('Producto 1', 10)">Añadir al Carrito</button>
+            </div>
+            <div class="product">
+                <img src="product2.jpg" alt="Producto 2">
+                <h3>Shampoo de Argán</h3>
+                <p>Botella de 350 ml</p>
+                <p class="price">$20</p>
+                <button onclick="addToCart('Producto 2', 20)">Añadir al Carrito</button>
+            </div>
+            <div class="product">
+                <img src="product3.jpg" alt="Producto 3">
+                <h3>Crema Corporal de Avena</h3>
+                <p>Envase de 400 ml</p>
+                <p class="price">$25</p>
+                <button onclick="addToCart('Producto 3', 25)">Añadir al Carrito</button>
+            </div>
+            <div class="product">
+                <img src="product4.jpg" alt="Producto 4">
+                <h3>Chanel No. 5 Eau de Parfum</h3>
+                <p>Botella de 100 ml</p>
+                <p class="price">$45</p>
+                <button onclick="addToCart('Producto 4', 45)">Añadir al Carrito</button>
+            </div>
+            
+        </section>
+        <section id="cart">
+            <h2>Carrito de Compras</h2>
+            <ul id="cartItems"></ul>
+            <p id="totalPrice">Total: $0</p>
+            <button onclick="checkout()">Proceder al Pago</button>
+        </section>
+        <section id="contact">
+            <h2>Comunícate con Nosotros</h2>
+            <p>Comunícate con nosotros a través de nuestras redes sociales (Facebook, Instagram, Twitter: @TuRedSocial). También puedes enviarnos un correo electrónico a 'sarriaga.2bb17@gmail.com' o llamarnos al '0987589783'. <br>¡Esperamos tus comentarios y consultas! <br> </p>
+            <button onclick="showContactForm()">Envía un Mensaje</button>
+        </section>
+        <section id="formSection" style="display:none;">
+            <h2>Formulario de Contacto</h2>
+            <form id="contactForm">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tienda Creativa. Todos los derechos reservados.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
